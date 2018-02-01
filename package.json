@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/etorix/circleci-test#readme"  
   "devDependencies": {
-    "phantomjs": "^2.1.7"
+  "phantomjs": "^2.1.7"
   }
 }
 
