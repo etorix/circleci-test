@@ -1,5 +1,5 @@
 <div id="div" style="display:none;">Hello CircleCI!</div>
-<input type="button" onclick="showDiv()" />
+<input type="button" id="btn" onclick="showDiv()" />
 <div id="test">
 
 </div>
@@ -7,16 +7,7 @@
 
 function showDiv() {
     document.getElementById("div").style.display = "block";
-    
-    var element = document.getElementById('div'),
-    style = window.getComputedStyle(element),
-    display = style.getPropertyValue('display');
-    if (display == "block") {    
-    document.getElementById("test").innerHTML = "TEST PASSES";
-    }
-    else {
-    document.getElementById("test").innerHTML = "TEST FAILS";
-    }
 }
 
 </script>
+
