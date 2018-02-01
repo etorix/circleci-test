@@ -8,7 +8,7 @@ tests.push(function check_display () {
     var element = document.getElementById("div"),
     style = window.getComputedStyle(element),
     display = style.getPropertyValue("display");
-    assert(display, "block");
+    assert(display, "none");
 
 })
 
