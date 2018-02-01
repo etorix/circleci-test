@@ -1,0 +1,23 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"ERROR\\\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etorix/circleci-test.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "core",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etorix/circleci-test/issues"
+  },
+  "homepage": "https://github.com/etorix/circleci-test#readme"
+}
+
