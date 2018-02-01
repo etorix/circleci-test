@@ -42,7 +42,7 @@ jobs:
     steps:
       - run:
           name: Can i do this?
-          command: pwd
+          command: pwd ; ls
       - run:
           name: Run setup script
           command: bash ./.circleci/heroku.sh
