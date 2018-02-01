@@ -40,9 +40,7 @@ jobs:
       - image: circleci/node:7.10
     working_directory: ~/repo/tmp
     steps:
-      - run:
-          name: do i need to checkout?
-          command: checkout
+      - checkout
       - run:
           name: Run setup script
           command: bash ./.circleci/heroku.sh
