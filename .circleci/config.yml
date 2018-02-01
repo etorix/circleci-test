@@ -35,5 +35,34 @@ jobs:
       # run tests!
       - run: yarn test
 
+deploy-job:
+    docker:
+      - image: my-image
+    working_directory: /tmp/my-project  
+    steps:
+      - run:
+          name: Run setup script
+          command: bash .circleci/heroku.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "66:fa:7d:6c:5d:99:b1:67:0b:47:af:a5:16:b2:81:36"
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push --force git@heroku.com:$HEROKU_APP_NAME.git HEAD:refs/heads/master
+            heroku run python manage.py deploy
+            heroku restart
+               
+ workflows:
+   version: 2
+   build-deploy:
+     jobs:
+       - build-job
+       - deploy-job:
+           requires:
+             - build-job
+           filters:
+             branches:
+               only: master
 
 
