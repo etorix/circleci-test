@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build-job:
+  build:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
@@ -57,10 +57,10 @@ deploy-job:
    version: 2
    build-deploy:
      jobs:
-       - build-job
+       - build
        - deploy-job:
            requires:
-             - build-job
+             - build
            filters:
              branches:
                only: master
