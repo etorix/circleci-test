@@ -5,10 +5,9 @@
   sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
 
   cat "StrictHostKeyChecking no" >> ~/.ssh/config
-
+  cat ~/.ssh/config
   cat > ~/.netrc << EOF
   machine api.heroku.com
-    yes
     login $HEROKU_LOGIN
     password $HEROKU_API_KEY
   EOF
