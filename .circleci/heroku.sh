@@ -12,7 +12,5 @@
     password $HEROKU_API_KEY
   EOF
 
-  cat >> ~/.ssh/config << EOF
-  VerifyHostKeyDNS yes
-  StrictHostKeyChecking no
-  EOF
+  cat "VerifyHostKeyDNS yes" >> ~/.ssh/config
+  cat "StrictHostKeyChecking no" >> ~/.ssh/config
