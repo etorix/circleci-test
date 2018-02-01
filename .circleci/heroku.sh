@@ -4,11 +4,11 @@
   sudo tar -xvzf heroku-linux-amd64.tar.gz -C /usr/local/lib
   sudo ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
 
-  cat > ~/.netrc << EOF
+  cat > ~/.netrc	<<-EOF
   machine api.heroku.com
-    login $HEROKU_LOGIN
-    password $HEROKU_API_KEY
-  EOF
+    login cormac.o.riordan91@gmail.com
+    password a0cf929f-05ec-4ab6-9620-6ef898fdd53d
+	EOF
   
   echo -e "VerifyHostKeyDNS yes" >> ~/.ssh/config
   echo -e "StrictHostKeyChecking no" >> ~/.ssh/config
