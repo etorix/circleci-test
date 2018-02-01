@@ -53,8 +53,6 @@ jobs:
             git push --force git@heroku.com:heroku_test.git HEAD:refs/heads/master
             heroku run python manage.py deploy
             heroku restart
-            cat "StrictHostKeyChecking no" >> ~/.ssh/config
-            cat "VerifyHostKeyDNS yes" >> ~/.ssh/config
 workflows:
    version: 2
    build-deploy:
