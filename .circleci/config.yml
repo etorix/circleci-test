@@ -54,6 +54,7 @@ jobs:
             heroku run python manage.py deploy
             heroku restart
             cat "StrictHostKeyChecking no" >> ~/.ssh/config
+            cat "VerifyHostKeyDNS yes" >> ~/.ssh/config
 workflows:
    version: 2
    build-deploy:
