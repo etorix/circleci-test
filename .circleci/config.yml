@@ -38,11 +38,11 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:7.10
-    working_directory: ~ 
+    working_directory: ~/repo
     steps:
       - run:
           name: Can i do this?
-          command: pwd ; ls
+          command: ls -al
       - run:
           name: Run setup script
           command: bash ./.circleci/heroku.sh
