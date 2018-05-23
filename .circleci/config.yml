@@ -34,13 +34,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: | 
-        sudo apt-get install software-properties-common
-        LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php
-        sudo apt-get update
-        sudo apt-get install php7.1
-        sudo update-alternatives --set php /usr/bin/php7.1
-        php --version
+      - run: |
+	  name: php
+          command: | 
+        	sudo apt-get install software-properties-common
+        	LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php
+        	sudo apt-get update
+        	sudo apt-get install php7.1
+        	sudo update-alternatives --set php /usr/bin/php7.1
+        	php --version
 #   deploy:
 #     docker:
 #       - image: circleci/node:7.10
