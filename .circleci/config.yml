@@ -33,6 +33,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
+      - run: sudo apt-get install software-properties-common
       - run: sudo add-apt-repository ppa:ondrej/php
       - run: sudo apt-get update
       - run: sudo update-alternatives --set php /usr/bin/php7.1
