@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/php:7.1-node
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -26,41 +26,41 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
-      - save_cache:
+      # - run: yarn install
+      # - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn test
+      # - run: yarn test
 
-  deploy:
-    docker:
-      - image: circleci/node:7.10
-    working_directory: ~/repo/tmp
-    steps:
-      - checkout
-      - run:
-          name: Run setup script
-          command: bash ./.circleci/heroku.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "66:fa:7d:6c:5d:99:b1:67:0b:47:af:a5:16:b2:81:36"
-      - run:
-          name: Deploy Master to Heroku
-          command: |
-            git push --force git@heroku.com:$HEROKU_APP_NAME.git HEAD:refs/heads/master
+#   deploy:
+#     docker:
+#       - image: circleci/node:7.10
+#     working_directory: ~/repo/tmp
+#     steps:
+#       - checkout
+#       - run:
+#           name: Run setup script
+#           command: bash ./.circleci/heroku.sh
+#       - add_ssh_keys:
+#           fingerprints:
+#             - "66:fa:7d:6c:5d:99:b1:67:0b:47:af:a5:16:b2:81:36"
+#       - run:
+#           name: Deploy Master to Heroku
+#           command: |
+#             git push --force git@heroku.com:$HEROKU_APP_NAME.git HEAD:refs/heads/master
 workflows:
    version: 2
    build-deploy:
      jobs:
        - build
-       - deploy:
-           requires:
-             - build
-           filters:
-             branches:
-               only: master
+#        - deploy:
+#            requires:
+#              - build
+#            filters:
+#              branches:
+#                only: master
 
 
