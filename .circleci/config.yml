@@ -34,8 +34,9 @@ jobs:
         
       # run tests!
       - run: sudo apt-get install software-properties-common
-      - run: sudo add-apt-repository ppa:ondrej/php
+      - run: LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php
       - run: sudo apt-get update
+      - run: sudo apt-get install php7.1
       - run: sudo update-alternatives --set php /usr/bin/php7.1
       - run: php --version
 #   deploy:
