@@ -24,11 +24,11 @@ jobs:
       - run:
          name: php
          command: | 
-            sudo apt-get install software-properties-common \
-            sudo add-apt-repository ppa:ondrej/php \
-            sudo apt-get update \
-            sudo apt-get install php7.1 \
-            sudo update-alternatives --set php /usr/bin/php7.1 \
+            sudo apt-get install software-properties-common
+            sudo add-apt-repository ppa:ondrej/php
+            sudo apt-get update
+            sudo apt-get install php7.1
+            sudo update-alternatives --set php /usr/bin/php7.1
             php --version
 #   deploy:
 #     docker:
