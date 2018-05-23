@@ -8,7 +8,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/php:7.1-node
+      - image: circleci/ruby:2.4.2-node-browsers
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -29,7 +29,7 @@ jobs:
             #sudo apt-get update
             #sudo apt-get install php7.1
             #sudo update-alternatives --set php /usr/bin/php7.1
-            git --version
+            ruby -v
 #   deploy:
 #     docker:
 #       - image: circleci/node:7.10
