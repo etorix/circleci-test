@@ -22,14 +22,14 @@ jobs:
 
       # run tests!
       - run:
-         name: php
+         name: curl
          command: | 
             #sudo apt-get install software-properties-common
             #sudo add-apt-repository ppa:ondrej/php
             #sudo apt-get update
             #sudo apt-get install php7.1
             #sudo update-alternatives --set php /usr/bin/php7.1
-            ruby -v
+            curl --request POST \ --user alexey.korshun@rosberry.com:GNs2mV6X0Qm5S9PVTbp1FA29 --header 'Accept: application/json' --header 'Content-Type: application/json' --data ' { \"transition\": { \"id\": \"61\" } }' --url 
 #   deploy:
 #     docker:
 #       - image: circleci/node:7.10
