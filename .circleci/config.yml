@@ -8,7 +8,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.4.2-node-browsers
+      - image: circleci/ruby:2.5-node-browsers-jessie
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -22,15 +22,15 @@ jobs:
 
       # run tests!
       - run:
-         name: curl
+         name: ruby
          command: | 
             #sudo apt-get install software-properties-common
             #sudo add-apt-repository ppa:ondrej/php
             #sudo apt-get update
             #sudo apt-get install php7.1
             #sudo update-alternatives --set php /usr/bin/php7.1
-             curl --request "POST" --user "alexey.korshun@rosberry.com:GNs2mV6X0Qm5S9PVTbp1FA29" --header "Accept: application/json" --header "Content-Type: application/json" --data "{ \"transition\": { \"id\": \"61\" } }" --url "https://rosberry.atlassian.net/rest/api/2/issue/TRIP-244/transitions"
-
+            #curl --request "POST" --user "alexey.korshun@rosberry.com:GNs2mV6X0Qm5S9PVTbp1FA29" --header "Accept: application/json" --header "Content-Type: application/json" --data "{ \"transition\": { \"id\": \"61\" } }" --url "https://rosberry.atlassian.net/rest/api/2/issue/TRIP-244/transitions"
+             ruby -v
 #   deploy:
 #     docker:
 #       - image: circleci/node:7.10
